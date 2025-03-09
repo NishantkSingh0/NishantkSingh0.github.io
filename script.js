@@ -114,6 +114,7 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
+
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
@@ -160,7 +161,6 @@ fetchData("projects").then(data => {
     showProjects(data);
 });
 
-
 document.onkeydown = function (e) {
     if (e.keyCode == 123) {
         return false;
@@ -179,7 +179,6 @@ document.onkeydown = function (e) {
     }
 }
 
-
 const srtop = ScrollReveal({
     origin: 'top',
     distance: '80px',
@@ -194,8 +193,7 @@ srtop.reveal('.home .content .btn', { delay: 200 });
 srtop.reveal('.home .linkedin', { interval: 600 });
 srtop.reveal('.home .github', { interval: 800 });
 srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
+srtop.reveal('.home .hackerrank', { interval: 600 });
 
 srtop.reveal('.about .content h3', { delay: 200 });
 srtop.reveal('.about .content .tag', { delay: 200 });
