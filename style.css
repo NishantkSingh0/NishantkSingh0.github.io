@@ -39,7 +39,6 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background: #420177;
 }
-
 .loader-container {
   position: fixed;
   top: 0;
@@ -55,6 +54,7 @@ html::-webkit-scrollbar-thumb {
 .loader-container.fade-out {
   top: -120%;
 }
+
 header {
   position: fixed;
   top: 0;
@@ -134,6 +134,11 @@ header .badges{
   opacity: 1;
 }
 
+.message a{
+  text-decoration: none;
+  color: #779af8;
+}
+
 header .navbar ul {
   list-style: none;
   display: flex;
@@ -157,6 +162,7 @@ header .navbar ul li a:hover {
   border-bottom: 0.2rem solid #0c56c4;
   padding: 0.5rem 0;
 }
+
 #menu {
   font-size: 3rem;
   cursor: pointer;
@@ -173,6 +179,7 @@ header .navbar ul li a:hover {
   }
   header{
     background-color: #98a0aa;
+    /* height: 40px; */
   }
   header .navbar {
     position: fixed;
@@ -306,7 +313,6 @@ header .navbar ul li a:hover {
   font-size: 1.5rem;
   transition: 0.3s;
 }
-
 .home .btn:hover i {
   transform: translateX(7px);   /* Left animation */
 }
@@ -353,12 +359,12 @@ header .navbar ul li a:hover {
 .social-icons a.linkedin:hover {
   background-color: #0072b1;
 }
-.social-icons a.instagram:hover {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+.social-icons a.hackerrank:hover {
+  background-color: #037432;
 }
 
 .social-icons a.Kaggle:hover {
-  background: #474752;
+  background: #475248;
 }
 
 @media(max-width: 700px){
@@ -527,7 +533,6 @@ header .navbar ul li a:hover {
     gap: 0;
   }
 }
-
 .skills {
   min-height: 90vh;
   background: linear-gradient(to bottom, #57059e, #4a00e0);
@@ -629,7 +634,6 @@ header .navbar ul li a:hover {
     width: 100%;
   }
 }
-
 .education {
   background: linear-gradient(to bottom, #74d1e9 60%, #779af8 ,#6f82ac);
   min-height: 80vh;
@@ -708,6 +712,7 @@ header .navbar ul li a:hover {
   font-weight: 700;
 }
 
+
 @media screen and (max-width: 900px) {
   .education .box-container .box {
     flex-direction: column;
@@ -735,7 +740,6 @@ header .navbar ul li a:hover {
     flex-wrap: wrap;
   }
 }
-
 .work {
   background: linear-gradient(to bottom, #21216d, #00002c);
   min-height: 30vh;
@@ -751,6 +755,7 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  /* color:#000; */
   margin: 2rem;
 }
 .work .box-container .box {
@@ -920,6 +925,9 @@ header .navbar ul li a:hover {
   text-align: left;
   margin-left: 1rem;
 }
+.Blogs .box-container .box .content h4 {
+  color: #c73737;
+}
 .Blogs .box-container .box .content p {
   font-size: 1.5rem;
   margin-left: 1rem;
@@ -934,9 +942,7 @@ header .navbar ul li a:hover {
   font-weight: 700;
 }
 
-
 @media screen and (max-width: 1050px) {
-  
   .Blogs .box-container .box {
     flex-direction: column;
     width: 100%;
@@ -963,7 +969,6 @@ header .navbar ul li a:hover {
     flex-wrap: wrap;
   }
 }
-
 .experience .timeline {
   position: relative;
   max-width: 1500px;
@@ -1126,7 +1131,6 @@ header .navbar ul li a:hover {
     margin-top: 3rem;
   }
 }
-
 .contact {
   background: #e5ecfb;
   min-height: 60vh;
@@ -1261,6 +1265,7 @@ form .button-area {
 .button-area button:hover i {
   left: 8px;
 }
+/* contact section media queries starts */
 @media (max-width: 900px) {
   .contact {
     min-height: 70vh;
@@ -1279,7 +1284,6 @@ form .button-area {
     margin-right: 2rem;
   }
 }
-
 .footer {
   min-height: auto;
   padding-top: 0;
