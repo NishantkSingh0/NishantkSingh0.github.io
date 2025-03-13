@@ -17,15 +17,13 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: #6ee682;
+  background: #12172C;
   font-family: "Poppins", sans-serif;
 }
-
 *::selection {
-  background: #da2b2b;
+  background: #2966ac;
   color: #fff;
 }
-
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -54,19 +52,20 @@ html::-webkit-scrollbar-thumb {
 .loader-container.fade-out {
   top: -120%;
 }
-
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 20px;
+  right: 20px;
   z-index: 1000;
   display: flex;
   align-items: center;
+  border-radius: 15px;
   justify-content: space-between;
   padding: 1.7rem 10%;
-  height: 6.5rem;
-  background-color: #fff;
+  height: 6rem;
+  opacity: 0.9;
+  background-color: #1A233A;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
 }   
 .subCont{       /*Used in Header of badges and NameTitle*/
@@ -79,39 +78,37 @@ section {
 }
 .heading {
   font-size: 3.5rem;
-  color: rgb(32, 32, 32);
+  color: rgb(235, 215, 215);
   font-weight: 800;
   text-align: center;
 }
 .about .heading span {
-  color: rgb(177, 14, 14);
+  color: rgb(255, 88, 88);
 }
 header .logo {
   font-size: 1.9rem;
   font-weight: 800;
   text-decoration: none;
-  color: #0e2431;
+  color: #E8EAF6;
 }
 header .logo i {
   font-size: 2.2rem;
 }
 header .logo:hover {
-  color: #0f3381;
+  color: #0c56c4;
 }
-
 header .badges{
   position: relative;
   margin-left: 20px;
   margin-bottom: 2px;
   display: inline-block;
 }
-
 .badgeImg{
   border-radius: 50px;
   height: 35px;
+  opacity: 0.9;
   width: 35px;
 }
-
 .message {
   position: absolute;
   top: 110%;
@@ -128,17 +125,14 @@ header .badges{
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-
 .badges:hover .message {
   visibility: visible;
   opacity: 1;
 }
-
 .message a{
   text-decoration: none;
   color: #779af8;
 }
-
 header .navbar ul {
   list-style: none;
   display: flex;
@@ -150,7 +144,7 @@ header .navbar li {
 }
 header .navbar ul li a {
   font-size: 1.57rem;
-  color: #0e2431;
+  color: #E8EAF6;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.04rem;
@@ -162,24 +156,22 @@ header .navbar ul li a:hover {
   border-bottom: 0.2rem solid #0c56c4;
   padding: 0.5rem 0;
 }
-
 #menu {
   font-size: 3rem;
   cursor: pointer;
-  color: rgb(24, 2, 63);
+  color: #E8EAF6;
   display: none;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1095px) {
   #menu {
     display: block;
   }
   body{
-    background-color: #b1b5bd;
+    background-color: #12172C;
   }
   header{
-    background-color: #98a0aa;
-    /* height: 40px; */
+    background-color: #1A233A;
   }
   header .navbar {
     position: fixed;
@@ -190,7 +182,7 @@ header .navbar ul li a:hover {
     
     text-align: left;
     align-items: flex-start;
-    background-color: #171727;
+    background-color: #1A233A;
   }
   header .navbar ul {
     flex-flow: column;
@@ -224,7 +216,6 @@ header .navbar ul li a:hover {
     right: 0;
   }
 }
-
 .home {
   position: relative;
   display: flex;
@@ -272,22 +263,22 @@ header .navbar ul li a:hover {
 .home .content h2 {
   font-size: 5rem;
   font-weight: 800;
-  color: #002057;
+  color: #E0E0E0;
 }
 .home .content h2 span {
   font-size: 5rem;
   font-weight: 800;
-  color: #ff7b00;
+  color: #301b08;
 }
 .home .content p {
   font-size: 2.5rem;
-  color: #000;
+  color: #0c56c4;
   font-weight: 600;
   padding: 1rem 0;
 }
 .home .content p span {         /* Dynamic About Writing Span "Have Worked" */
   font-size: 2.5rem;
-  color: rgb(23, 51, 141);
+  color: #B0BEC5;
   font-weight: 600;
   padding: 1rem 0;
 }
@@ -333,7 +324,7 @@ header .navbar ul li a:hover {
   font-size: 2rem;
   display: inline-block;
   line-height: 44px;
-  color: #fff;
+  color: #E0E0E0;
   background-color: #09011b;
   width: 44px;
   height: 44px;
@@ -362,17 +353,14 @@ header .navbar ul li a:hover {
 .social-icons a.hackerrank:hover {
   background-color: #037432;
 }
-
 .social-icons a.Kaggle:hover {
   background: #475248;
 }
-
 @media(max-width: 700px){
   .subCont .badges {
     display: none;
   }
 }
-
 @media (max-width: 500px) {
   .home .btn {
     margin: 4rem 0;
@@ -391,10 +379,8 @@ header .navbar ul li a:hover {
     font-size: 2.2rem;
   }
 }
-
-
 .about {
-  background: #ffffff;
+  background: #34383b;
 }
 .about .row {
   display: flex;
@@ -412,6 +398,7 @@ header .navbar ul li a:hover {
   width: 450px;
   height: 350px;
   border-radius: 5%;
+  opacity: 0.9;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   transition: 0.3s;
   cursor: pointer;
@@ -419,17 +406,44 @@ header .navbar ul li a:hover {
 .about .row .image img:hover {
   mix-blend-mode: normal;
 }
+.Underline {
+  width: 150px; 
+  height: 4px; 
+  border-radius: 50px;
+  background-color: #9E9E9E; 
+  margin: 5px auto;
+  margin-bottom: 20px;
+}
+.Underline2 {
+  width: 280px; 
+  height: 4px; 
+  border-radius: 50px;
+  background-color: #9E9E9E; 
+  margin: 5px auto;
+  margin-bottom: 25px;
+}
+.Underline3 {
+  width: 230px; 
+  height: 4px; 
+  border-radius: 50px;
+  background-color: #9E9E9E; 
+  margin: 5px auto;
+  margin-bottom: 18px;
+}
 .about .row .content {
   flex: 1 1 45rem;
   padding: 3rem;
 }
 .about .row .content h3 {
-  color: rgb(27, 27, 27);
+  color: #E0E0E0;
   font-size: 2.5rem;
+}
+.about .row .content .Para {
+  color: #d4d9f5;
 }
 .about .row .content .tag {
   font-size: 1.4rem;
-  color: #020133;
+  color: #B3B3B3;
   font-weight: 600;
   margin-top: 1rem;
 }
@@ -444,19 +458,25 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;    
+  color: #B3B3B3;
   justify-content: space-between;
   font-family: "Nunito";
   font-weight: 600;
 }
+
 .about .row .content .box-container .box p {
   padding: 0px 10px;    /*vertical: 0px horizontal: 10px*/
 }
 .about .row .content .box-container .box p a {
-  color: #0f0da5;
+  color: #c9c6c6;
   text-transform: none;
 }
+.about .row .content .box-container .box p a:hover {
+  color: #c9c6c6;
+  text-decoration: underline;
+}
 .about .row .content .box-container .box p span {
-  color: #0f0da5;
+  color: #c9c6c6;
   text-transform: none;
 }
 .about .row .content .AboutBut {
@@ -535,7 +555,7 @@ header .navbar ul li a:hover {
 }
 .skills {
   min-height: 90vh;
-  background: linear-gradient(to bottom, #57059e, #4a00e0);
+  background: linear-gradient(to bottom, #44037c, #280079);
 }
 .skills h2 {
   color: #fff;
@@ -563,7 +583,7 @@ header .navbar ul li a:hover {
   padding: 10px;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 22, 0.9);
+  background: rgba(0, 0, 19, 0.9);
   transition: 0.2s;
 }
 .skills .container .bar:hover {
@@ -634,18 +654,20 @@ header .navbar ul li a:hover {
     width: 100%;
   }
 }
+
 .education {
-  background: linear-gradient(to bottom, #74d1e9 60%, #779af8 ,#6f82ac);
+  background: #11324b;
   min-height: 80vh;
 }
 .education .heading span {
-  color: rgb(57, 7, 151);
+  color: rgb(23, 197, 90);
 }
 .education .qoute {
   font-size: 1.5rem;
   text-align: center;
   font-family: "Nunito", sans-serif;
-  font-weight: 600;
+  color: #fff;
+  font-weight: 700;
   margin-top: 0.5rem;
 }
 .education .box-container {
@@ -666,7 +688,7 @@ header .navbar ul li a:hover {
   margin-top: 2rem;
   overflow: hidden;
   transition: 0.3s;
-  background: rgb(252, 252, 252);
+  background: #383b3f;
 }
 .education .box-container .box:hover {
   transform: scale(1.03);
@@ -674,6 +696,7 @@ header .navbar ul li a:hover {
 }
 .education .box-container .box .image {
   flex: 1 1 20rem;
+  opacity: 0.8;
   width: 100%;
 }
 .education .box-container .box img {
@@ -692,11 +715,14 @@ header .navbar ul li a:hover {
 }
 .education .box-container .box .content h3 {
   font-size: 2.5rem;
-  color: #012970;
+  color: #E8EAF6;
   padding: 0.5rem 0;
   font-weight: 600;
   text-align: left;
   margin-left: 1rem;
+}
+.education .box-container .box .content p a{
+  color: rgb(20, 231, 101);
 }
 .education .box-container .box .content p {
   font-size: 1.5rem;
@@ -705,13 +731,12 @@ header .navbar ul li a:hover {
 }
 .education h4 {
   font-size: 2rem;
-  color: rgb(34, 109, 0);
+  color: #c2d5df;
   text-align: left;
   margin: 1rem;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
 }
-
 
 @media screen and (max-width: 900px) {
   .education .box-container .box {
@@ -741,12 +766,11 @@ header .navbar ul li a:hover {
   }
 }
 .work {
-  background: linear-gradient(to bottom, #21216d, #00002c);
+  background: linear-gradient(to bottom, #151547, #010135);
   min-height: 30vh;
 }
 .work h2 {
   color: #fff;
-  padding: 1rem;
 }
 .work .heading span {
   color: rgb(194, 175, 7);
@@ -769,6 +793,7 @@ header .navbar ul li a:hover {
 .work .box-container .box img {
   height: 100%;
   width: 100%;
+  opacity: 0.85;
   object-fit: cover;
 }
 .work .box-container .box .content {          /* Content hower screen on project section */
@@ -806,7 +831,7 @@ header .navbar ul li a:hover {
 }
 .work .desc p {
   font-size: 1.5rem;
-  color: #e6eff1;
+  color: #dbeff8;
 }
 .work .desc .btns {
   display: flex;
@@ -860,17 +885,17 @@ header .navbar ul li a:hover {
 .work .viewall .btn:hover i {
   transform: translateX(5px);
 }
-
 .Blogs {
-  background: #A28089;
+  background: #3f122b;
   min-height: 80vh;
 }
 .Blogs .heading span {
-  color: rgb(57, 7, 151);
+  color: rgb(181, 75, 223);
 }
 .Blogs .qoute {
   font-size: 1.5rem;
   text-align: center;
+  color: #fff;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   margin-top: 0.5rem;
@@ -893,7 +918,7 @@ header .navbar ul li a:hover {
   margin-top: 2rem;
   overflow: hidden;
   transition: 0.3s;
-  background: rgb(252, 252, 252);
+  background: #1F2A48;
 }
 .Blogs .box-container .box:hover {
   transform: scale(1.03);
@@ -906,6 +931,7 @@ header .navbar ul li a:hover {
 .Blogs .box-container .box img {
   object-fit: cover;
   position: relative;
+  opacity: 0.85;
   width: 100%;
   height: 100%;
 }
@@ -919,19 +945,25 @@ header .navbar ul li a:hover {
 }
 .Blogs .box-container .box .content h3 {
   font-size: 2.5rem;
-  color: #012970;
+  color: #1f63d8;
   padding: 0.5rem 0;
   font-weight: 600;
   text-align: left;
   margin-left: 1rem;
 }
+.Blogs .box-container .box .content h3 a{
+  color: #2c6fec;
+}
 .Blogs .box-container .box .content h4 {
-  color: #c73737;
+  color: #e23c3c;
 }
 .Blogs .box-container .box .content p {
   font-size: 1.5rem;
   margin-left: 1rem;
   text-align: left;
+}
+.Blogs .box-container .box .content p a{
+  color: #cad9e0;
 }
 .Blogs h4 {
   font-size: 2rem;
@@ -953,6 +985,7 @@ header .navbar ul li a:hover {
   }
   .Blogs .box-container .box img {
     width: 100%;
+    opacity: 0.9;
   }
   .Blogs .box-container .box .content {
     position: relative;
@@ -978,7 +1011,7 @@ header .navbar ul li a:hover {
   content: "";
   position: absolute;
   width: 6px;
-  background: #020133;
+  background: #050458;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -997,7 +1030,7 @@ header .navbar ul li a:hover {
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(223, 223, 223);
   border: 4px solid #ff9f55;
   top: 15px;
   border-radius: 50%;
@@ -1022,9 +1055,9 @@ header .navbar ul li a:hover {
   width: 0;
   z-index: 1;
   right: 30px;
-  border: medium solid #f68c09;
+  border: medium solid #4d5257;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #f68c09;
+  border-color: transparent transparent transparent #4d5257;
 }
 .experience .right::before {
   content: " ";
@@ -1034,15 +1067,15 @@ header .navbar ul li a:hover {
   width: 0;
   z-index: 1;
   left: 30px;
-  border: medium solid #f68c09;
+  border: medium solid #4d5257;
   border-width: 10px 10px 10px 0;
-  border-color: transparent #f68c09 transparent transparent;
+  border-color: transparent #4d5257 transparent transparent;
 }
 .experience .right::after {
   left: -16px;
 }
 .experience .content {
-  background-color: #f68c09;
+  background-color: #4d5257;
   position: relative;
   border-radius: 6px;
 }
@@ -1055,12 +1088,14 @@ header .navbar ul li a:hover {
   margin-left: 1.5rem;
   padding-bottom: 1rem;
 }
-.experience .content .desc h3 {
+.experience .content .tag h2 {
   font-size: 1.5rem;
   font-weight: 600;
+  color: #f8ab47;
 }
 .experience .content .desc p {
   font-size: 1.2rem;
+  color: #B0BEC5;
 }
 .morebtn {
   display: flex;
@@ -1114,9 +1149,9 @@ header .navbar ul li a:hover {
   }
   .experience .container::before {
     left: 61px;
-    border: medium solid #f68c09;
+    border: medium solid #4d5257;
     border-width: 10px 10px 10px 0;
-    border-color: transparent #f68c09 transparent transparent;
+    border-color: transparent #4d5257 transparent transparent;
   }
   .experience .left::after {
     left: 15px;
@@ -1265,7 +1300,6 @@ form .button-area {
 .button-area button:hover i {
   left: 8px;
 }
-/* contact section media queries starts */
 @media (max-width: 900px) {
   .contact {
     min-height: 70vh;
@@ -1337,7 +1371,7 @@ form .button-area {
   font-size: 1.7rem;
   margin-right: 1rem;
   transition: 0.2s;
-  background: rgb(230, 230, 230);
+  background: #E8EAF6;
   color: #02094b;
   border: none;
 }
@@ -1386,7 +1420,6 @@ form .button-area {
     padding: 1.2rem;
   }
 }
-
 @media (max-width: 500px) {
   html {
     font-size: 55%;
@@ -1398,7 +1431,6 @@ form .button-area {
     padding: 2rem;
   }
 }
-
 #scroll-top {
   position: fixed;
   top: -140%;
