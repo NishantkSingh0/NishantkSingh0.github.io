@@ -80,7 +80,6 @@ document.addEventListener('visibilitychange',
         }
     });
 
-
 var typed = new Typed(".typing-text", {
     strings: ["2+ year of Experience on Deep learning","worked on Vision Transformer based object classification Models","worked on RAG models","worked on Building Highend React Applications","worked on Transformer large language Models","worked on CNN based Object Segmentation Models","Built DL/React based Online exam proctoring System", "worked on Transformer based Translation Models","worked on RNN based Text Generation Model"],
     loop: true,
@@ -98,7 +97,6 @@ async function fetchData(type = "skills") {
     const data = await response.json();
     return data;
 }
-
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
     let skillHTML = "";
@@ -113,8 +111,6 @@ function showSkills(skills) {
     });
     skillsContainer.innerHTML = skillHTML;
 }
-
-
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
@@ -137,30 +133,23 @@ function showProjects(projects) {
     </div>`
     });
     projectsContainer.innerHTML = projectHTML;
-
     VanillaTilt.init(document.querySelectorAll(".tilt"), {
         max: 15,
     });
-
     const srtop = ScrollReveal({
         origin: 'top',
         distance: '80px',
         duration: 1000,
         reset: true
     });
-
     srtop.reveal('.work .box', { interval: 200 });
-
 }
-
 fetchData().then(data => {
     showSkills(data);
 });
-
 fetchData("projects").then(data => {
     showProjects(data);
 });
-
 document.onkeydown = function (e) {
     if (e.keyCode == 123) {
         return false;
@@ -178,41 +167,30 @@ document.onkeydown = function (e) {
         return false;
     }
 }
-
 const srtop = ScrollReveal({
     origin: 'top',
     distance: '80px',
     duration: 1000,
     reset: true
 });
-
 srtop.reveal('.home .content h3', { delay: 200 });
 srtop.reveal('.home .content p', { delay: 200 });
 srtop.reveal('.home .content .btn', { delay: 200 });
-
 srtop.reveal('.home .linkedin', { interval: 600 });
 srtop.reveal('.home .github', { interval: 800 });
 srtop.reveal('.home .twitter', { interval: 1000 });
 srtop.reveal('.home .hackerrank', { interval: 600 });
-
 srtop.reveal('.about .content h3', { delay: 200 });
 srtop.reveal('.about .content .tag', { delay: 200 });
 srtop.reveal('.about .content p', { delay: 200 });
 srtop.reveal('.about .content .box-container', { delay: 200 });
 srtop.reveal('.about .content .Btn', { delay: 200 });
-
-
 srtop.reveal('.skills .container', { interval: 200 });
 srtop.reveal('.skills .container .bar', { delay: 400 });
-
 srtop.reveal('.education .box', { interval: 200 });
-
 srtop.reveal('.Blogs .box', { interval: 200 });
-
 srtop.reveal('.work .box', { interval: 200 });
-
 srtop.reveal('.experience .timeline', { delay: 400 });
 srtop.reveal('.experience .timeline .container', { interval: 400 });
-
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
