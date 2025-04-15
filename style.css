@@ -20,10 +20,12 @@ body {
   background: #12172C;
   font-family: "Poppins", sans-serif;
 }
+
 *::selection {
   background: #2966ac;
   color: #fff;
 }
+
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -37,6 +39,7 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background: #420177;
 }
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -68,7 +71,7 @@ header {
   background-color: #1A233A;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
 }   
-.subCont{       /*Used in Header of badges and NameTitle*/
+.subCont{       
   display: flex;
   margin-top: 10px;
 }
@@ -91,24 +94,30 @@ header .logo {
   text-decoration: none;
   color: #E8EAF6;
 }
+.margin10pxr{
+  margin-right: 10px;
+}
 header .logo i {
   font-size: 2.2rem;
 }
 header .logo:hover {
   color: #0c56c4;
 }
+
 header .badges{
   position: relative;
   margin-left: 20px;
   margin-bottom: 2px;
   display: inline-block;
 }
+
 .badgeImg{
   border-radius: 50px;
   height: 35px;
   opacity: 0.9;
   width: 35px;
 }
+
 .message {
   position: absolute;
   top: 110%;
@@ -125,14 +134,17 @@ header .badges{
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
+
 .badges:hover .message {
   visibility: visible;
   opacity: 1;
 }
+
 .message a{
   text-decoration: none;
   color: #779af8;
 }
+
 header .navbar ul {
   list-style: none;
   display: flex;
@@ -142,7 +154,7 @@ header .navbar ul {
 header .navbar li {
   margin-left: 2.5rem;
 }
-header .navbar ul li a {
+header .navbar ul li a ,header .navbar ul li i,header .navbar ul li span{
   font-size: 1.57rem;
   color: #E8EAF6;
   font-weight: 600;
@@ -195,8 +207,16 @@ header .navbar ul li a:hover {
     border-radius: 0.5rem;
     width: 26rem;
   }
-  header .navbar ul li a {
+  header .navbar ul li a{
     display: block;
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    font-size: 2rem;
+  }
+  .navbar ul li span,
+  .navbar ul li i {
+    display: inline-block;
     padding: 1rem;
     text-align: left;
     color: #fff;
@@ -276,7 +296,7 @@ header .navbar ul li a:hover {
   font-weight: 600;
   padding: 1rem 0;
 }
-.home .content p span {         /* Dynamic About Writing Span "Have Worked" */
+.home .content p span {         
   font-size: 2.5rem;
   color: #B0BEC5;
   font-weight: 600;
@@ -290,7 +310,7 @@ header .navbar ul li a:hover {
   border-radius: 4em;
   transition: 0.5s;
   color: #fff;
-  background: #048f3e;    /* "About Me" Button colour*/
+  background: #048f3e;   
   box-shadow: 0px 5px 18px rgba(5, 126, 41, 0.6);
   font-family: "Nunito", sans-serif;
 }
@@ -305,7 +325,7 @@ header .navbar ul li a:hover {
   transition: 0.3s;
 }
 .home .btn:hover i {
-  transform: translateX(7px);   /* Left animation */
+  transform: translateX(7px);   
 }
 .socials {
   position: relative;
@@ -353,6 +373,7 @@ header .navbar ul li a:hover {
 .social-icons a.hackerrank:hover {
   background-color: #037432;
 }
+
 .social-icons a.Kaggle:hover {
   background: #475248;
 }
@@ -465,7 +486,7 @@ header .navbar ul li a:hover {
 }
 
 .about .row .content .box-container .box p {
-  padding: 0px 10px;    /*vertical: 0px horizontal: 10px*/
+  padding: 0px 10px;   
 }
 .about .row .content .box-container .box p a {
   color: #c9c6c6;
@@ -492,7 +513,7 @@ header .navbar ul li a:hover {
   border-radius: 3em;
   transition: 0.3s;
   color: #fff;
-  background: rgb(231, 26, 26);    /* "Resume >" Button Colour */
+  background: rgb(231, 26, 26);   
   box-shadow: 0px 5px 10px rgba(247, 48, 48, 0.6);
   font-family: "Nunito", sans-serif;
 }
@@ -574,7 +595,7 @@ header .navbar ul li a:hover {
 }
 .skills .container .row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);  /* adjust number of columns */
+  grid-template-columns: repeat(6, 1fr);  
   flex-wrap: wrap;
   gap: 1.8rem;
 }
@@ -654,7 +675,6 @@ header .navbar ul li a:hover {
     width: 100%;
   }
 }
-
 .education {
   background: #11324b;
   min-height: 80vh;
@@ -779,7 +799,6 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  /* color:#000; */
   margin: 2rem;
 }
 .work .box-container .box {
@@ -796,7 +815,7 @@ header .navbar ul li a:hover {
   opacity: 0.85;
   object-fit: cover;
 }
-.work .box-container .box .content {          /* Content hower screen on project section */
+.work .box-container .box .content {         
   height: 100%;
   width: 100%;
   position: absolute;
@@ -973,7 +992,6 @@ header .navbar ul li a:hover {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
 }
-
 @media screen and (max-width: 1050px) {
   .Blogs .box-container .box {
     flex-direction: column;
@@ -1097,6 +1115,7 @@ header .navbar ul li a:hover {
   font-size: 1.2rem;
   color: #B0BEC5;
 }
+/* view all button */
 .morebtn {
   display: flex;
   justify-content: center;
@@ -1128,7 +1147,6 @@ header .navbar ul li a:hover {
 .morebtn .btn:hover i {
   transform: translateX(5px);
 }
-
 @media screen and (max-width: 700px) {
   .experience {
     min-height: 100vh;
