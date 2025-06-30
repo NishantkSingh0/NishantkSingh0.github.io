@@ -1,246 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <title>Expanding Music Player</title>
- <link rel="stylesheet" href="player.css">
+<meta charset="UTF-8">
+<title>Expanding Music Player</title>
+<link rel="stylesheet" href="player.css">
 </head>
 <body>
- <div class="music-player">
- <div class="spinning-disc">
+<div class="music-player">
+<div class="spinning-disc">
 <div class="star" style="top: 20%; left: 30%;"></div>
 <div class="star" style="top: 30%; left: 70%;"></div>
 <div class="star" style="top: 60%; left: 20%;"></div>
 <div class="star" style="top: 40%; left: 80%;"></div>
 <div class="star" style="top: 70%; left: 50%;"></div>
 <div class="star" style="top: 15%; left: 60%;"></div>
- </div>
- 
- <div class="player-controls">
+</div><div class="player-controls">
 <div class="player-info">
 <div class="track-info" style="padding-top: 8px;">
- <p class="track-name">नमामि शमिशान्</p>
- <p class="artist-name">Religious India</p>
+<p class="track-name">नमामि शमिशान्</p>
+<p class="artist-name">Religious India</p>
 </div>
 <div class="progress-container">
- <div class="progress-bar"></div>
+<div class="progress-bar"></div>
 </div>
 <div class="time-display">
- <span class="current-time">0:00</span>
- <span class="total-time">5:24</span>
+<span class="current-time">0:00</span>
+<span class="total-time">0:00</span>
 </div>
 <div class="error-message" id="error-message" style="display: none;"></div>
-</div>
-
-<button class="control-button play-btn" id="play-btn" disabled>
+</div><button class="control-button play-btn" id="play-btn" disabled>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
- <path d="M8 5L19 12L8 19V5Z"></path>
+<path d="M8 5L19 12L8 19V5Z"></path>
 </svg>
 </button>
- </div>
- </div>
-
- <div id="yt-player"></div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
- let ytPlayer;
- let isPlayerReady = false;
- let currentState = -1; 
-
- const playBtn = document.getElementById('play-btn');
- const disc = document.querySelector('.spinning-disc');
- const progressBar = document.querySelector('.progress-bar');
- const currentTimeSpan = document.querySelector('.current-time');
- const totalTimeSpan = document.querySelector('.total-time');
- const errorMessage = document.getElementById('error-message');
-
- const YT_STATES = {
- UNSTARTED: -1,
- ENDED: 0,
- PLAYING: 1,
- PAUSED: 2,
- BUFFERING: 3,
- CUED: 5
- };
-
- function showError(message) {
- errorMessage.textContent = message;
- errorMessage.style.display = 'block';
- setTimeout(() => {
-errorMessage.style.display = 'none';
- }, 3000);
- }
-
- function updatePlayButton(isPlaying) {
- if (isPlaying) {
-playBtn.innerHTML = `
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
- <rect x="6" y="4" width="4" height="16"></rect>
- <rect x="14" y="4" width="4" height="16"></rect>
-</svg>`;
-disc.classList.add('spinning');
- } else {
-playBtn.innerHTML = `
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
- <path d="M8 5L19 12L8 19V5Z"></path>
-</svg>`;
-disc.classList.remove('spinning');
- }
- }
-
- function formatTime(seconds) {
- const mins = Math.floor(seconds / 60);
- const secs = Math.floor(seconds % 60);
- return `${mins}:${secs.toString().padStart(2, '0')}`;
- }
-
- function updateProgress() {
- if (!ytPlayer || !isPlayerReady) return;
- 
- try {
-const currentTime = ytPlayer.getCurrentTime();
-const duration = ytPlayer.getDuration();
-
-if (duration > 0) {
-const progressPercent = (currentTime / duration) * 100;
-progressBar.style.width = progressPercent + '%';
-currentTimeSpan.textContent = formatTime(currentTime);
-totalTimeSpan.textContent = formatTime(duration);
-}
- } catch (error) {
-console.error('Error updating progress:', error);
- }
- }
-
- function onYouTubeIframeAPIReady() {
- ytPlayer = new YT.Player('yt-player', {
-height: '1',
-width: '1',
-videoId: '081bLdQKX-Q',
-playerVars: {
-autoplay: 0,
-controls: 0,
-modestbranding: 1,
-rel: 0
-},
-events: {
-onReady: onPlayerReady,
-onStateChange: onPlayerStateChange,
-onError: onPlayerError
-}
- });
- }
-
- function onPlayerReady(event) {
- console.log('YouTube player is ready');
- isPlayerReady = true;
- playBtn.disabled = false;
- console.log('Play button enabled:', !playBtn.disabled);
- 
- const duration = ytPlayer.getDuration();
- if (duration > 0) {
-totalTimeSpan.textContent = formatTime(duration);
- }
- }
-
- function onPlayerStateChange(event) {
- currentState = event.data;
- console.log('Player state changed:', currentState);
- 
- switch (currentState) {
-case YT_STATES.PLAYING:
-updatePlayButton(true);
-startProgressUpdate();
-break;
-case YT_STATES.PAUSED:
-case YT_STATES.ENDED:
-updatePlayButton(false);
-stopProgressUpdate();
-break;
-case YT_STATES.BUFFERING:
-break;
- }
- }
-
- function onPlayerError(event) {
- console.error('YouTube Player Error:', event.data);
- let errorMsg = 'Playback error occurred';
- 
- switch (event.data) {
-case 2:
-errorMsg = 'Invalid video ID';
-break;
-case 5:
-errorMsg = 'HTML5 player error';
-break;
-case 100:
-errorMsg = 'Video not found';
-break;
-case 101:
-case 150:
-errorMsg = 'Video not available';
-break;
- }
- 
- showError(errorMsg);
- playBtn.disabled = true;
- }
-
- let progressInterval;
-
- function startProgressUpdate() {
- stopProgressUpdate();
- progressInterval = setInterval(updateProgress, 1000);
- }
-
- function stopProgressUpdate() {
- if (progressInterval) {
+</div>
+</div><script>
+const playBtn = document.getElementById('play-btn');
+const disc = document.querySelector('.spinning-disc');
+const progressBar = document.querySelector('.progress-bar');
+const currentTimeSpan = document.querySelector('.current-time');
+const totalTimeSpan = document.querySelector('.total-time');
+const errorMessage = document.getElementById('error-message');const audio = new Audio('vibeAsset.mp3');
+let isPlaying = false;
+let progressInterval = null;function formatTime(seconds) {
+const mins = Math.floor(seconds / 60);
+const secs = Math.floor(seconds % 60);
+return `${mins}:${secs.toString().padStart(2, '0')}`;
+}function updateProgress() {
+if (!audio || !audio.duration) return;
+const percent = (audio.currentTime / audio.duration) * 100;
+progressBar.style.width = percent + '%';
+currentTimeSpan.textContent = formatTime(audio.currentTime);
+totalTimeSpan.textContent = formatTime(audio.duration);
+}function startProgress() {
+stopProgress();
+progressInterval = setInterval(updateProgress, 1000);
+}function stopProgress() {
+if (progressInterval) {
 clearInterval(progressInterval);
 progressInterval = null;
- }
- }
-
- playBtn.addEventListener('click', () => {
- if (!ytPlayer || !isPlayerReady) {
-showError('Player not ready');
-return;
- }
-
- try {
-if (currentState === YT_STATES.PLAYING) {
-ytPlayer.pauseVideo();
+}
+}function updatePlayButton(state) {
+if (state) {
+playBtn.innerHTML = `
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="6" y="4" width="4" height="16"></rect>
+<rect x="14" y="4" width="4" height="16"></rect>
+</svg>`;
+disc.classList.add('spinning');
 } else {
-if (ytPlayer.isMuted()) {
- ytPlayer.unMute();
+playBtn.innerHTML = `
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M8 5L19 12L8 19V5Z"></path>
+</svg>`;
+disc.classList.remove('spinning');
 }
-ytPlayer.playVideo();
+}function showError(msg) {
+errorMessage.textContent = msg;
+errorMessage.style.display = 'block';
+setTimeout(() => {
+errorMessage.style.display = 'none';
+}, 3000);
+}audio.addEventListener('loadedmetadata', () => {
+totalTimeSpan.textContent = formatTime(audio.duration);
+playBtn.disabled = false;
+});audio.addEventListener('ended', () => {
+isPlaying = false;
+updatePlayButton(false);
+stopProgress();
+});playBtn.addEventListener('click', () => {
+if (!audio) return;if (isPlaying) {
+audio.pause();
+isPlaying = false;
+updatePlayButton(false);
+stopProgress();
+} else {
+audio.play().then(() => {
+isPlaying = true;
+updatePlayButton(true);
+startProgress();
+}).catch(err => {
+showError("Playback blocked. Tap again or allow autoplay.");
+console.error(err);
+});
 }
- } catch (error) {
-console.error('Error controlling playback:', error);
-showError('Playback control failed');
- }
- });
-
- document.querySelector('.progress-container').addEventListener('click', (e) => {
- if (!ytPlayer || !isPlayerReady) return;
- 
- const rect = e.target.getBoundingClientRect();
- const clickX = e.clientX - rect.left;
- const width = rect.width;
- const percentage = clickX / width;
- const duration = ytPlayer.getDuration();
- 
- if (duration > 0) {
-const seekTime = duration * percentage;
-ytPlayer.seekTo(seekTime);
- }
- });
-
- window.addEventListener('beforeunload', () => {
- stopProgressUpdate();
- });
+});document.querySelector('.progress-container').addEventListener('click', (e) => {
+if (!audio || !audio.duration) return;
+const rect = e.target.getBoundingClientRect();
+const percent = (e.clientX - rect.left) / rect.width;
+audio.currentTime = percent * audio.duration;
+});window.addEventListener('beforeunload', () => {
+stopProgress();
+audio.pause();
+});
 </script>
-
 </body>
 </html>
