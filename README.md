@@ -1,1 +1,3 @@
-[![Portfolio](./Images/PortfolioQR.png)](https://nishantksingh0.github.io)
+<a href="https://nishantksingh0.github.io">
+  <img src="./Images/PortfolioQR.png" alt="Portfolio" width="250" />
+</a>
