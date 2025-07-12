@@ -228,7 +228,7 @@ background-color: #0685da;}
 .social-icons a.github:hover {background-color: #141313;}
 .social-icons a.twitter:hover {background-color: #00aced;}
 .social-icons a.linkedin:hover {background-color: #0072b1;}
-.social-icons a.hackerrank:hover {background-color: #037432;}.social-icons a.Kaggle:hover {background: #475248;}@media(max-width: 700px){.subCont .badges {display: none;}}@media (max-width: 500px) {.home .btn {margin: 4rem 0;}.socials {margin-top: 12rem;}
+.social-icons a.hackerrank:hover {background-color: #037432;}.social-icons a.Kaggle:hover {background: #475248;}@media (max-width: 500px) {.home .btn {margin: 4rem 0;}.socials {margin-top: 12rem;}
 .home .image img {margin-top: 1rem;}
 .home .content p {font-size: 2.2rem;}
 .home .content p span {font-size: 2.2rem;}}
