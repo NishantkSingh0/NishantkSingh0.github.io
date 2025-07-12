@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");.iframe-container {position: absolute;
-top: 28vh; 
+top: 28vh;
 right: 1vw; 
 width: 400px;
 height: 300px;
 transform: scale(0.99);
 transform-origin: top right;
 overflow: hidden;
-z-index: 1; }iframe {width: 100%; 
+z-index: 1;}iframe {width: 100%; 
 height: 100%;
 border: none;}.DeskOnly{max-width: 75%;}@media (max-width: 1024px) {.iframe-container {display: none;}
 .DeskOnly{max-width: 100%;}}* {margin: 0;
@@ -113,7 +113,9 @@ header .navbar {position: fixed;
 top: 6.5rem;
 right: -120%;
 width: 70%;
-height: 100%;text-align: left;
+height: 100%;
+
+text-align: left;
 align-items: flex-start;
 background-color: #1A233A;}
 header .navbar ul {flex-flow: column;
@@ -180,7 +182,8 @@ color: #301b08;}
 color: #0c56c4;
 font-weight: 600;
 padding: 1rem 0;}
-.home .content p span {font-size: 2.5rem;
+.home .content p span { 
+font-size: 2.5rem;
 color: #B0BEC5;
 font-weight: 600;
 padding: 1rem 0;}
@@ -199,8 +202,7 @@ font-size: 1.7rem;
 letter-spacing: 0.1rem;}
 .home .btn i {margin-left: 0.3rem;
 font-size: 1.5rem;
-transition: 0.3s;}
-.home .btn:hover i {transform: translateX(7px); }
+transition: 0.3s;}.home .btn:hover i {transform: translateX(7px);}
 .socials {position: relative;
 margin-top: 9rem;}
 .socials .social-icons {padding-left: 0;
@@ -285,8 +287,7 @@ text-transform: none;}
 flex-wrap: wrap;
 align-items: center;
 color: #B3B3B3;
-justify-content: space-between;
-font-family: "Nunito";
+justify-content: space-between;font-family: "Nunito";
 font-weight: 600;}.about .row .content .box-container .box p {padding: 0px 10px;}
 .about .row .content .box-container .box p a {color: #c9c6c6;
 text-transform: none;}
@@ -327,8 +328,7 @@ mix-blend-mode: normal;}
 .about .row {padding: 0.5rem;
 margin-bottom: 7rem;}
 .about .row .content {padding: 1rem;}
-.about .row .content .box-container {gap: 0;}}
-.skills {min-height: 90vh;
+.about .row .content .box-container {gap: 0;}}.skills {min-height: 90vh;
 background: linear-gradient(to bottom, #44037c, #280079);}
 .skills h2 {color: #fff;}
 .skills .heading span {color: rgb(212, 192, 6);}
@@ -340,7 +340,7 @@ width: 90%;
 margin: auto;
 margin-top: 2rem;}
 .skills .container .row {display: grid;
-grid-template-columns: repeat(6, 1fr); 
+grid-template-columns: repeat(6, 1fr);
 flex-wrap: wrap;
 gap: 1.8rem;}
 .skills .container .bar {margin-bottom: 15px;
@@ -384,7 +384,8 @@ margin: 1rem;
 padding: 2rem 0.2rem 2rem 0.2rem;
 gap: 1rem;}
 .skills .container {margin-top: 5px;
-width: 100%;}}.education {background: #11324b;
+width: 100%;}}
+.education {background: #11324b;
 min-height: 80vh;}
 .experience {background: #24024b;
 min-height: 80vh;}
@@ -476,7 +477,8 @@ height: 30rem;}
 width: 100%;
 opacity: 0.85;
 object-fit: cover;}
-.work .box-container .box .content {height: 100%;
+.work .box-container .box .content { 
+height: 100%;
 width: 100%;
 position: absolute;
 top: 85%;
@@ -706,7 +708,8 @@ border-color: transparent #4d5257 transparent transparent;}
 .Achievements .left::after {left: 15px;}
 .Achievements .right::after {left: 15px;}
 .Achievements .right {left: 0%;}
-.morebtn {margin-top: 3rem;}}.contact {background: #e5ecfb;
+.morebtn {margin-top: 3rem;}}
+.contact {background: #e5ecfb;
 min-height: 60vh;}
 .contact .container {max-width: 1050px;
 width: 100%;
@@ -799,7 +802,8 @@ color: #fff;}
 .contact .container .content {padding: 18px 12px;}
 .contact .content .image-box {display: none;}
 .contact .content form {width: 100%;
-margin-right: 2rem;}}.footer {min-height: auto;
+margin-right: 2rem;}}
+.footer {min-height: auto;
 padding-top: 0;
 background: rgb(0, 1, 43);}
 .footer .box-container {display: flex;
@@ -856,8 +860,7 @@ animation: pound 0.35s infinite alternate;}
 @keyframes pound {to {transform: scale(1.1);}}
 @media (max-width: 450px) {.footer .box-container .box {margin: 1.5rem;}
 .footer .box-container .box p {padding: 0.7rem;}
-.footer .box-container .box .share a {padding: 1.2rem;}}
-@media (max-width: 500px) {html {font-size: 55%;}
+.footer .box-container .box .share a {padding: 1.2rem;}}@media (max-width: 500px) {html {font-size: 55%;}
 body {padding-right: 0;}
 section {padding: 2rem;}}
 #scroll-top {position: fixed;
@@ -871,3 +874,4 @@ border-radius: 50%;
 transition: 1s linear;
 z-index: 1000;}
 #scroll-top.active {top: calc(100% - 12rem);}
+/* scroll top ends */
