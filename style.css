@@ -449,7 +449,7 @@ font-weight: 600;
 text-align: left;
 margin-left: 1rem;}
 .education .box-container .box .content p a{color: rgb(20, 231, 101);}
-.experience .box-container .box .content p a{color: #b2ff86;}
+.experience .box-container .box .content p{color: #b2ff86;}
 .education .box-container .box .content p, .experience .box-container .box .content p {font-size: 1.5rem;
 margin-left: 1rem;
 text-align: left;}
